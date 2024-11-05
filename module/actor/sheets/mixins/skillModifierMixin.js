@@ -6,7 +6,7 @@ export let skillModifierMixin = {
         if (this.actor.system.skills[stat][skill].modifiers) {
             newModifierList = this.actor.system.skills[stat][skill].modifiers;
         }
-        newModifierList.push({ name: 'Modifier', value: 0 });
+        newModifierList.push({ id: foundry.utils.randomID(), name: 'Modifier', value: 0 });
 
         this.actor.update({
             [`system.skills.${this.skillMap[skill].attribute.name}.${skill}.modifiers`]: newModifierList
